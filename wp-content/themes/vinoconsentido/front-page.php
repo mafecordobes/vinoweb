@@ -20,7 +20,7 @@
         </div>
     </div>
 </div>
-<div class="vc-who">
+<div class="vc-who" id="section-filosofia">
     <div class="container">
         <div class="col-xs-12">
             <h1 class="text-center">Nuestra filosofía</h1>
@@ -53,7 +53,7 @@
         </div>
     </div>
 </div>
-<div class="vc-services bg-service" style="background-image:url(<?php echo $bg_services;?>)"> 
+<div class="vc-services bg-service" style="background-image:url(<?php echo $bg_services;?>)" id="section-servicios"> 
     <div class="col-xs-12">
         <h1 class="text-center">Servicios</h1>
     </div>
@@ -75,7 +75,7 @@
         </div>
     </div>
 </div>
-<div class="vc-contacto" style="background-image:url(<?php echo $bg_contacto;?>)">
+<div class="vc-contacto" style="background-image:url(<?php echo $bg_contacto;?>)" id="section-contacto">
     <div class="col-xs-12">
         <h1 class="text-center">¿Cómo podemos ayudarte?</h1>
     </div>

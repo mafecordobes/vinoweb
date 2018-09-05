@@ -20,4 +20,23 @@ $(document).ready(function() {
     setTimeout(function(){
         odometer.innerHTML = 20;
     }, 1000);
+
+    $('.contacto-menu').click(function(){
+        $('html,body').animate({
+            scrollTop: $("#section-contacto").offset().top - 50
+        }, 1500);
+    });
+
+    $('.servicios-menu').click(function(){
+        $('html,body').animate({
+            scrollTop: $("#section-servicios").offset().top - 80
+        }, 1500);
+    });
+
+    $('.filosofia-menu').click(function(){
+        $('html,body').animate({
+            scrollTop: $("#section-filosofia").offset().top - 50
+        }, 1500);
+    });
+
 });

@@ -183,7 +183,8 @@ ul#menu-main-menu li a {
       color: #6d563e;
       border-radius: 3px;
       -webkit-appearance: none;
-      border: none; }
+      border: none;
+      background: rgba(255, 255, 255, 0.8); }
       .vc-contacto form button:hover, .vc-contacto form button:focus, .vc-contacto form button:active, .vc-contacto form input:hover, .vc-contacto form input:focus, .vc-contacto form input:active, .vc-contacto form select:hover, .vc-contacto form select:focus, .vc-contacto form select:active, .vc-contacto form textarea:hover, .vc-contacto form textarea:focus, .vc-contacto form textarea:active {
         outline: none; }
     .vc-contacto form button, .vc-contacto form input, .vc-contacto form select {
