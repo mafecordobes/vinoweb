@@ -9,6 +9,7 @@
     $empresas = get_field("servicio_empresa");
     $familiar = get_field("servicio_familiar");
     $domicilio = get_field("servicio_domicilio");
+    $bg_contacto = get_field("background_contacto");
 ?>
 
 <div class="section-parallax">
@@ -22,7 +23,7 @@
 <div class="vc-who">
     <div class="container">
         <div class="col-xs-12">
-            <h1 class="text-center">Nuestra fílosofia</h1>
+            <h1 class="text-center">Nuestra filosofía</h1>
             <div class="col-sm-6 col-xs-12">
                <img src="<?php echo $imagen; ?>" class="img-responsive"/>
             </div>
@@ -72,6 +73,14 @@
                 <p class="stripe">Catas a domicilio</p>
             </div>
         </div>
+    </div>
+</div>
+<div class="vc-contacto" style="background-image:url(<?php echo $bg_contacto;?>)">
+    <div class="col-xs-12">
+        <h1 class="text-center">¿Cómo podemos ayudarte?</h1>
+    </div>
+    <div class="container container-form">
+        <?php echo do_shortcode( '[contact-form-7 id="5" title="Contact form 1"]' ); ?>
     </div>
 </div>
 <?php get_footer(); ?>

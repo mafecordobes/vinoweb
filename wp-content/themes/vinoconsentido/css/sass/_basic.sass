@@ -112,9 +112,7 @@ ul#menu-main-menu li a
   background: $black
   color: $white
   font-family: $montserrate
-  margin-top: 5%
   .rrss-content 
-    margin-top: 4%
     padding-top: 3%
   .rrss
     a 
@@ -137,3 +135,43 @@ ul#menu-main-menu li a
     p
       padding: 4px 0 20px
       margin-bottom: 0
+.vc-contacto
+  background-size: cover
+  background-position: center
+  h1 
+    font-family: $great-vibes
+    color: $white
+    font-size: get-vw-desktop(50px)
+    margin-top: 5%
+    margin-bottom: 3%
+  form
+    font-family: $montserrate
+    font-size: get-vw-desktop(14px)
+    label
+      color: $white
+      width: 100%
+      margin-top: 1%
+    button, input, select, textarea
+      width: 100% !important
+      color: $brown
+      border-radius: 3px
+      -webkit-appearance: none
+      border: none
+      &:hover, &:focus, &:active
+        outline: none
+    button, input, select 
+      height: 35px
+    input.wpcf7-form-control.wpcf7-submit
+      background: $brown
+      border: none
+      height: 45px
+      color: $white
+      font-size: get-vw-desktop(16px)
+      &:hover 
+        color: $brown
+        background: $white
+        border: 1px solid $brown
+  .container-form
+    padding-bottom: 7%
+    padding-left: 7%
+    padding-right: 7%

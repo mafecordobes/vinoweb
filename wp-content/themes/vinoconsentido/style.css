@@ -140,10 +140,8 @@ ul#menu-main-menu li a {
 .footer {
   background: #000000;
   color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  margin-top: 5%; }
+  font-family: "Montserrat", sans-serif; }
   .footer .rrss-content {
-    margin-top: 4%;
     padding-top: 3%; }
   .footer .rrss a {
     padding: 6px;
@@ -164,6 +162,47 @@ ul#menu-main-menu li a {
     padding: 4px 0 20px;
     margin-bottom: 0; }
 
+.vc-contacto {
+  background-size: cover;
+  background-position: center; }
+  .vc-contacto h1 {
+    font-family: "Great Vibes", cursive;
+    color: #ffffff;
+    font-size: 3.4722222222vw;
+    margin-top: 5%;
+    margin-bottom: 3%; }
+  .vc-contacto form {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9722222222vw; }
+    .vc-contacto form label {
+      color: #ffffff;
+      width: 100%;
+      margin-top: 1%; }
+    .vc-contacto form button, .vc-contacto form input, .vc-contacto form select, .vc-contacto form textarea {
+      width: 100% !important;
+      color: #6d563e;
+      border-radius: 3px;
+      -webkit-appearance: none;
+      border: none; }
+      .vc-contacto form button:hover, .vc-contacto form button:focus, .vc-contacto form button:active, .vc-contacto form input:hover, .vc-contacto form input:focus, .vc-contacto form input:active, .vc-contacto form select:hover, .vc-contacto form select:focus, .vc-contacto form select:active, .vc-contacto form textarea:hover, .vc-contacto form textarea:focus, .vc-contacto form textarea:active {
+        outline: none; }
+    .vc-contacto form button, .vc-contacto form input, .vc-contacto form select {
+      height: 35px; }
+    .vc-contacto form input.wpcf7-form-control.wpcf7-submit {
+      background: #6d563e;
+      border: none;
+      height: 45px;
+      color: #ffffff;
+      font-size: 1.1111111111vw; }
+      .vc-contacto form input.wpcf7-form-control.wpcf7-submit:hover {
+        color: #6d563e;
+        background: #ffffff;
+        border: 1px solid #6d563e; }
+  .vc-contacto .container-form {
+    padding-bottom: 7%;
+    padding-left: 7%;
+    padding-right: 7%; }
+
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   ul#menu-main-menu li a {
     font-size: 2.0833333333vw; }
@@ -183,7 +222,18 @@ ul#menu-main-menu li a {
   .vc-services .service {
     margin-bottom: 5%; }
   .vc-services .stripe {
-    font-size: 2.6041666667vw; } }
+    font-size: 2.6041666667vw; }
+
+  .vc-contacto h1 {
+    font-size: 3.90625vw; }
+  .vc-contacto .container-form {
+    padding-bottom: 7%;
+    padding-left: 0;
+    padding-right: 0; }
+  .vc-contacto label {
+    font-size: 1.3020833333vw; }
+  .vc-contacto form input.wpcf7-form-control.wpcf7-submit {
+    font-size: 1.5625vw; } }
 @media only screen and (max-width: 767px) {
   ul#menu-main-menu li a {
     font-size: 4.3243243243vw;
@@ -246,6 +296,18 @@ ul#menu-main-menu li a {
   .footer {
     padding-left: 5%;
     padding-right: 5%;
-    font-size: 3.5135135135vw; } }
+    font-size: 3.5135135135vw; }
+
+  .vc-contacto h1 {
+    font-size: 8.6486486486vw;
+    margin-top: 10%; }
+  .vc-contacto .container-form {
+    padding-bottom: 7%;
+    padding-left: 0;
+    padding-right: 0; }
+  .vc-contacto label, .vc-contacto form {
+    font-size: 3.2432432432vw; }
+  .vc-contacto form input.wpcf7-form-control.wpcf7-submit {
+    font-size: 3.7837837838vw; } }
 
 /*# sourceMappingURL=style.css.map */

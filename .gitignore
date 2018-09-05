@@ -1,0 +1,10 @@
+*.log
+wp-config.php
+/readme.html
+/license.txt
+.DS_Store
+.idea
+*.iml
+wp-content/themes/DentalVip/style.css.map
+wp-content/themes/DentalVip/css/.sass-cache
+wp-content/themes/DentalVip/css/.sass-cache/*
