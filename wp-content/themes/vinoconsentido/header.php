@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
     <title><?php wp_title('-', true, 'right'); ?></title>
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/slick/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/slick/slick/slick-theme.css"/>
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -45,6 +47,7 @@
     </style>
 
     <?php wp_enqueue_script("jquery"); ?>
+    <script src="<?php echo get_template_directory_uri(); ?><?php echo get_template_directory_uri(); ?>/assets/slick/slick.min.js"></script>
 </head>
 
 <body>

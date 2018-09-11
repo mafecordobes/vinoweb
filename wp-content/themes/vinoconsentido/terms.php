@@ -2,7 +2,6 @@
     /**
      * Template Name: Terms
      **/
-    get_header();
     $terms = get_field("terminos_y_condiciones");
     $heroForm = get_field("background", 9);
 ?>
