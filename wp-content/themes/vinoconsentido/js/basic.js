@@ -39,4 +39,6 @@ $(document).ready(function() {
         }, 1500);
     });
 
+    $('.eventos').slick();
+
 });

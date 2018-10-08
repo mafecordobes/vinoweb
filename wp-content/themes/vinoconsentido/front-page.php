@@ -10,6 +10,12 @@
     $familiar = get_field("servicio_familiar");
     $domicilio = get_field("servicio_domicilio");
     $bg_contacto = get_field("background_contacto");
+    $args = array(
+        'post_type' => 'eventos',
+        'post_status' => 'publish',
+        'posts_per_page' => '-1'
+    );
+    $eventos = new WP_Query( $args );
 ?>
 
 <div class="section-parallax">
@@ -75,12 +81,53 @@
         </div>
     </div>
 </div>
-<div class="vc-contacto" style="background-image:url(<?php echo $bg_contacto;?>)" id="section-contacto">
+<?php if($eventos->have_posts()):?>
+<section class="vc-reservas" id="section-reservas">
+    <div class="col-xs-12">
+        <h1 class="text-center">Próximos Eventos</h1>
+        <div class="container">
+            <div class="eventos">
+                <?php while ( $eventos->have_posts() ) : $eventos->the_post();
+                    // Set variables
+                    $title = get_the_title();
+                    $image = get_field('imagen');
+                    $price_person = get_field('precio_individual');
+                    $price_pair = get_field('precio_por_pareja');
+                    $fecha = get_field('fecha');
+					$lugar = get_field('lugar');
+					$qty = get_field('cantidad_de_personas');
+                ?>
+                    <div class="col-xs-12">
+                        <div class="col-sm-7">
+                            <div class="bg-event" style="background-image: url(<?php echo $image; ?>)"></div>
+                        </div>
+                        <div class="col-sm-5 description text-center">
+                            <h2 class="text-center"><?php echo $title; ?></h2>
+                            <div class="vc-description-div text-left">
+                                <p><i class="far fa-calendar-check"></i> <?php echo $fecha; ?></p>
+                                <p><i class="fas fa-map-marker"></i></i><?php echo $lugar; ?></p>
+                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_person, 2, '.', ','); ?> COP por persona</p>
+                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_pair, 2, '.', ','); ?> COP por pareja</p>
+								<p><i class="fas fa-users"></i>Cupos disponibles: 25 de <?php echo $qty; ?> personas</p>
+                            </div>
+                            <a href="#">Reservar</a>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
+            </div>
+            <div class="terms-conditions text-center">
+                Puedes revisar <a href="/terminos-y-condiciones">aquí</a> nuestros términos y condiciones
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+<section class="vc-contacto" style="background-image:url(<?php echo $bg_contacto;?>)" id="section-contacto">
     <div class="col-xs-12">
         <h1 class="text-center">¿Cómo podemos ayudarte?</h1>
     </div>
     <div class="container container-form">
         <?php echo do_shortcode( '[contact-form-7 id="5" title="Contact form 1"]' ); ?>
     </div>
-</div>
+</section>
 <?php get_footer(); ?>

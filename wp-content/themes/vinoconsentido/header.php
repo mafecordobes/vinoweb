@@ -47,13 +47,13 @@
     </style>
 
     <?php wp_enqueue_script("jquery"); ?>
-    <script src="<?php echo get_template_directory_uri(); ?><?php echo get_template_directory_uri(); ?>/assets/slick/slick.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/slick/slick/slick.min.js"></script>
 </head>
 
 <body>
     <header>
         <?php
-            $logoMenu = get_field( "logo", 10 );
+            $logoMenu = get_field( "logo", 9 );
         ?>
         <div class="col-xs-12 dv-top-bar">
             <div class="row ">

@@ -204,6 +204,64 @@ ul#menu-main-menu li a {
     padding-left: 7%;
     padding-right: 7%; }
 
+.vc-reservas {
+  min-height: 700px;
+  background: rgba(109, 86, 62, 0.2); }
+  .vc-reservas h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: 3.4722222222vw;
+    margin-bottom: 3%;
+    margin-top: 4%;
+    color: #6d563e; }
+  .vc-reservas .bg-event {
+    min-height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.3); }
+  .vc-reservas .description {
+    color: #6d563e;
+    font-family: "Montserrat", sans-serif; }
+    .vc-reservas .description h2 {
+      font-size: 1.4583333333vw;
+      margin-top: 0;
+      margin-bottom: 10%; }
+    .vc-reservas .description a {
+      background: #6d563e;
+      border: none;
+      height: 45px;
+      color: #ffffff;
+      font-size: 1.1111111111vw;
+      padding: 2% 26%;
+      line-height: 8;
+      text-align: center; }
+      .vc-reservas .description a:hover {
+        color: #6d563e;
+        background: #ffffff;
+        border: 1px solid #6d563e;
+        text-decoration: none; }
+
+.slick-slide.slick-current.slick-active:focus {
+  outline: none; }
+
+.terms-conditions.text-center {
+  margin-top: 36px;
+  color: #6d563e;
+  font-size: 11px; }
+  .terms-conditions.text-center a {
+    color: #6d563e;
+    text-decoration: underline; }
+
+.vc-description-div i {
+  width: 45px;
+  font-size: 24px;
+  vertical-align: sub; }
+.vc-description-div p {
+  margin-bottom: 16px; }
+
+.slick-prev:before, .slick-next:before {
+  color: #6d563e; }
+
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   ul#menu-main-menu li a {
     font-size: 2.0833333333vw; }
@@ -234,7 +292,33 @@ ul#menu-main-menu li a {
   .vc-contacto label {
     font-size: 1.3020833333vw; }
   .vc-contacto form input.wpcf7-form-control.wpcf7-submit {
-    font-size: 1.5625vw; } }
+    font-size: 1.5625vw; }
+
+  .vc-reservas {
+    min-height: 560px; }
+    .vc-reservas h1 {
+      margin-top: 7%; }
+    .vc-reservas .description h2 {
+      font-size: 2.4739583333vw; }
+    .vc-reservas .description a {
+      font-size: 16px; }
+    .vc-reservas .vc-description-div i {
+      width: 30px;
+      font-size: 20px; }
+    .vc-reservas .vc-description-div p {
+      font-size: 13px; }
+    .vc-reservas .bg-event {
+      min-height: 320px; }
+
+  .slick-next {
+    right: 0; }
+
+  .slick-prev {
+    left: 0; }
+
+  .terms-conditions.text-center {
+    margin-top: 0;
+    font-size: 10px; } }
 @media only screen and (max-width: 767px) {
   ul#menu-main-menu li a {
     font-size: 4.3243243243vw;
@@ -309,6 +393,28 @@ ul#menu-main-menu li a {
   .vc-contacto label, .vc-contacto form {
     font-size: 3.2432432432vw; }
   .vc-contacto form input.wpcf7-form-control.wpcf7-submit {
-    font-size: 3.7837837838vw; } }
+    font-size: 3.7837837838vw; }
+
+  .vc-reservas {
+    min-height: 800px; }
+    .vc-reservas h1 {
+      font-size: 8.1081081081vw;
+      margin-top: 14%; }
+    .vc-reservas .bg-event {
+      min-height: 150px; }
+    .vc-reservas .description h2 {
+      font-size: 25px;
+      margin-top: 5%; }
+    .vc-reservas .description a {
+      font-size: 15px; }
+
+  .vc-description-div i {
+    width: 24px;
+    font-size: 15px; }
+  .vc-description-div p {
+    font-size: 13px; }
+
+  .terms-conditions.text-center {
+    margin-top: 0; } }
 
 /*# sourceMappingURL=style.css.map */
