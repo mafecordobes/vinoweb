@@ -65,7 +65,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand dv-logo" href="#">
+                            <a class="navbar-brand dv-logo" href="/">
                                 <img src="<?php echo $logoMenu; ?>" alt="Vino con sentido Logo"/>
                             </a>
                         </div>

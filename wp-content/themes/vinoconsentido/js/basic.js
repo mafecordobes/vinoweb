@@ -17,10 +17,6 @@ $(document).ready(function() {
         }
     });
 
-    setTimeout(function(){
-        odometer.innerHTML = 20;
-    }, 1000);
-
     $('.contacto-menu').click(function(){
         $('html,body').animate({
             scrollTop: $("#section-contacto").offset().top - 50
