@@ -229,12 +229,12 @@ ul#menu-main-menu li a {
     .vc-reservas .description a {
       background: #6d563e;
       border: none;
-      height: 45px;
       color: #ffffff;
-      font-size: 1.1111111111vw;
-      padding: 2% 26%;
-      line-height: 8;
-      text-align: center; }
+      font-size: 0.9722222222vw;
+      padding: 14px 12px;
+      line-height: 0;
+      text-align: center;
+      float: right; }
       .vc-reservas .description a:hover {
         color: #6d563e;
         background: #ffffff;
@@ -261,6 +261,27 @@ ul#menu-main-menu li a {
 
 .slick-prev:before, .slick-next:before {
   color: #6d563e; }
+
+.section-reserva .container.hero {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 57%; }
+  .section-reserva .container.hero h1 {
+    font-size: 2.7777777778vw; }
+.section-reserva .vc-contacto form label {
+  text-align: start; }
+.section-reserva .vc-contacto form input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  float: left;
+  width: 30px !important;
+  margin-top: -7px;
+  margin-bottom: 7px;
+  margin-right: 9px; }
+.section-reserva .vc-contacto form .partner label {
+  padding-top: 0px;
+  margin-top: 0;
+  margin-bottom: 14px; }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   ul#menu-main-menu li a {
@@ -318,7 +339,10 @@ ul#menu-main-menu li a {
 
   .terms-conditions.text-center {
     margin-top: 0;
-    font-size: 10px; } }
+    font-size: 10px; }
+
+  .section-reserva .container.hero h1 {
+    font-size: 3.90625vw; } }
 @media only screen and (max-width: 767px) {
   ul#menu-main-menu li a {
     font-size: 4.3243243243vw;
@@ -415,6 +439,11 @@ ul#menu-main-menu li a {
     font-size: 13px; }
 
   .terms-conditions.text-center {
-    margin-top: 0; } }
+    margin-top: 0; }
+
+  .section-reserva .container.hero {
+    width: 100%; }
+    .section-reserva .container.hero h1 {
+      font-size: 7.5675675676vw; } }
 
 /*# sourceMappingURL=style.css.map */

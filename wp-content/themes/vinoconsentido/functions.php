@@ -7,8 +7,8 @@
      **/
 
     // Loads css file
-    wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
-
+	wp_enqueue_style( 'style', get_template_directory_uri() . 'style.css', array(), '1' );
+	
     // Register custom navigation walker
     require_once('wp_bootstrap_navwalker.php');
 
@@ -19,7 +19,8 @@
 
     add_theme_support( 'menus' );
 
-    add_action('init', 'register_custom_posts_init');
+	add_action('init', 'register_custom_posts_init');
+	add_action('init', 'people_custom_posts_init');
 
     function register_custom_posts_init() {
         // Register Products
@@ -36,6 +37,23 @@
             'supports'           => array( 'title', 'thumbnail', 'revisions' )
         );
         register_post_type('eventos', $products_args);
+	}
+	
+	function people_custom_posts_init() {
+        // Register Products
+        $people_labels = array(
+            'name'               => 'Asistentes',
+            'singular_name'      => 'Asistente',
+            'menu_name'          => 'Asistentes'
+        );
+        $people_args = array(
+            'labels'             => $people_labels,
+            'public'             => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'supports'           => array( 'title', 'thumbnail', 'revisions' )
+        );
+        register_post_type('personas', $people_args);
     }
 
     if ( !defined('AH_DIRNAME') )

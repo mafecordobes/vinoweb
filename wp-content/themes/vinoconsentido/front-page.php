@@ -15,7 +15,8 @@
         'post_status' => 'publish',
         'posts_per_page' => '-1'
     );
-    $eventos = new WP_Query( $args );
+	$eventos = new WP_Query( $args );
+
 ?>
 
 <div class="section-parallax">
@@ -106,11 +107,10 @@
                             <div class="vc-description-div text-left">
                                 <p><i class="far fa-calendar-check"></i> <?php echo $fecha; ?></p>
                                 <p><i class="fas fa-map-marker"></i></i><?php echo $lugar; ?></p>
-                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_person, 2, '.', ','); ?> COP por persona</p>
-                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_pair, 2, '.', ','); ?> COP por pareja</p>
-								<p><i class="fas fa-users"></i>Cupos disponibles: 25 de <?php echo $qty; ?> personas</p>
+                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_person, 2, '.', ','); ?> COP por persona <a href="/registro?people=1">Reservar</a></p>
+                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_pair, 2, '.', ','); ?> COP por pareja <a href="/registro?people=2">Reservar</a></p>
+								<p><i class="fas fa-users"></i>Cupos disponibles: 25</p>
                             </div>
-                            <a href="#">Reservar</a>
                         </div>
                     </div>
                 <?php endwhile; ?>

@@ -33,8 +33,23 @@ $(document).ready(function() {
         $('html,body').animate({
             scrollTop: $("#section-filosofia").offset().top - 50
         }, 1500);
+	});
+	
+	$('.reserva-menu').click(function(){
+        $('html,body').animate({
+            scrollTop: $("#section-reservas").offset().top - 50
+        }, 1500);
     });
 
-    $('.eventos').slick();
+	$('.eventos').slick();
+
+	$("#reserva-partner").change(function() {
+		if(this.checked) {
+			$(".partner").css("display", "inline-block");
+		}else {
+			$(".partner").css("display", "none");
+		}
+	});
+
 
 });
