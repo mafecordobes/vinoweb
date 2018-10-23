@@ -2,9 +2,16 @@
     /**
      * Template Name: Registration
      **/
-	$heroForm = get_field("background", 9);
+	$heroForm = get_field("background");
 	get_header(); 
 	$people = $_GET["people"];
+	$evento = $_GET["e"];
+
+	$name = get_the_title($evento);
+	$precio_i = get_field("precio_individual", $evento);
+	$precio_p = get_field("precio_por_pareja", $evento);
+	$fecha = get_field("fecha", $evento);
+
 ?>
 <script>
 	str1 = window.location.pathname;
@@ -20,50 +27,46 @@
         <div class="text-center">
             <h1 class="vc-title-reserva">Reserva para el evento:</h1>
 			<div role="form" class="vc-contacto">
-				<form action="" method="post" class="wpcf7-form" novalidate="novalidate">
+				<form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" class="custom-form">
+		
 				<div class="col-sm-12 col-md-12 form col-xs-12">
 					<label> Nombre<br>
-					<span class=" your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span> </label>
+					<span class=" your-name"><input type="text" id="your-name" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" required ></span> </label>
 				</div>
 				<?php if($people == "2"):?>
 					<div class="col-sm-12 col-md-12 form col-xs-12 partner">
 						<label> Nombre acompañante<br>
-						<span class=" your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false"></span> </label>
+						<span class=" your-name"><input type="text" id="your-name-2" name="partner" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" required></span> </label>
 					</div>
 				<?php endif; ?>
 				<div class="col-sm-6 col-md-6 form col-xs-12">
 					<label> Correo<br>
-					<span class=" your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"></span> </label>
+					<span class=" your-subject"><input type="email" id="your-mail" name="mail" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" required></span> </label>
 				</div>
 				<div class="col-sm-6 col-md-6 form col-xs-12">
 					<label> Teléfono<br>
-					<span class=" your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"></span> </label>
+					<span class=" your-subject"><input type="text" id="your-phone" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" required></span> </label>
 				</div>
 				<div class="col-sm-12 col-md-12 form col-xs-12">
 					<label> Restricciones alimentarias: (alérgias, vegetariano, vegano, entre otros).<br>
-					<span class=" your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false"></span> </label>
+					<span class=" your-subject"><input type="text" id="your-food" value="" name="food" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" ></span> </label>
 				</div>
 				<div class="col-sm-12 col-md-12 form col-xs-12">
 					<label> Requerimiento adicional<br>
-					<span class=" your-message"><textarea name="your-message" cols="10" rows="3" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span> </label>
+					<span class=" your-message"><textarea id="your-requirements" cols="10" rows="3" name="requirements" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" ></textarea></span> </label>
+				</div>
+				<div class="col-sm-12 col-md-12 form col-xs-12">
+					<input type="hidden" value="<?php echo $evento; ?>" name="id-evento" />
+					<input type="hidden" value="<?php echo $fecha; ?>" name="fecha-evento" />
+					<input type="hidden" value="<?php echo $name; ?>" name="name-evento" />
+					<input type="hidden" value="<?php echo $people; ?>" name="people" />
+					<input type="hidden" value="<?php echo ($people == "1") ? $precio_i : $precio_p; ?>" name="precio-evento" />
+					<input type="hidden" name="action" value="save_data_asistent">
+					<input type="submit" id="save_form" value="Pagar">
 				</div>
 			</div>
-			<form>
-				<script
-					src="https://checkout.epayco.co/checkout.js"
-					class="epayco-button"
-					data-epayco-key="491d6a0b6e992cf924edd8d3d088aff1"
-					data-epayco-amount="50000"
-					data-epayco-name="Vestido Mujer Primavera"
-					data-epayco-description="Vestido Mujer Primavera"
-					data-epayco-currency="cop"
-					data-epayco-country="co"
-					data-epayco-test="true"
-					data-epayco-external="false"
-					data-epayco-response="https://www.vinoconsentido.com/response/"
-					data-epayco-confirmation="https://www.vinoconsentido.com/confirmation/">
-				</script>
-			</form>
+		
+	
 		</div>
 		
     </div>

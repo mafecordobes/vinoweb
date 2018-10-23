@@ -97,6 +97,8 @@
                     $fecha = get_field('fecha');
 					$lugar = get_field('lugar');
 					$qty = get_field('cantidad_de_personas');
+					$id_evento = $post->ID; 
+					
                 ?>
                     <div class="col-xs-12">
                         <div class="col-sm-7">
@@ -107,9 +109,9 @@
                             <div class="vc-description-div text-left">
                                 <p><i class="far fa-calendar-check"></i> <?php echo $fecha; ?></p>
                                 <p><i class="fas fa-map-marker"></i></i><?php echo $lugar; ?></p>
-                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_person, 2, '.', ','); ?> COP por persona <a href="/registro?people=1">Reservar</a></p>
-                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_pair, 2, '.', ','); ?> COP por pareja <a href="/registro?people=2">Reservar</a></p>
-								<p><i class="fas fa-users"></i>Cupos disponibles: 25</p>
+                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_person, 2, '.', ','); ?> COP por persona <a href="/registro?people=1&e=<?php echo $id_evento; ?>">Reservar</a></p>
+                                <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_pair, 2, '.', ','); ?> COP por pareja <a href="/registro?people=2&e=<?php echo $id_evento; ?>">Reservar</a></p>
+								<p><i class="fas fa-users"></i>Cupos disponibles: <?php echo $qty; ?></p>
                             </div>
                         </div>
                     </div>

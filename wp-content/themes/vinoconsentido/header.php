@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
     <title><?php wp_title('-', true, 'right'); ?></title>
     <meta name="description" content="<?php bloginfo( 'description' ); ?>">
@@ -35,6 +35,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/fullpage.extensions.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/numscroller-1.0.js"></script>
+	<script type="text/javascript" src="https://checkout.epayco.co/checkout.js">   </script>
 
     <script type="text/javascript">
         var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";

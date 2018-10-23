@@ -27,7 +27,7 @@
   <header id="main-header" style="margin-top:20px">
     <div class="row">
       <div class="col-lg-12 franja">
-        <img class="center-block logo-response" src="<?php echo get_template_directory_uri(); ?>/assets/vinoconsentido-black.png" style=" width: 150px">
+        <a href="/"><img class="center-block logo-response" src="<?php echo get_template_directory_uri(); ?>/assets/vinoconsentido-black.png" style=" width: 150px"></a>
       </div>
     </div>
   </header>
@@ -86,6 +86,8 @@
       </div>
     </div>
   </footer>
+  <input type="hidden" value="<?php echo admin_url( 'admin-ajax.php' ); ?>" id="path-ajax">
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -109,8 +111,9 @@
         if (response.success) {
           if (response.data.x_cod_response == 1) {
             //Codigo personalizado
-            alert("Transaccion Aprobada");
+            //alert("Transaccion Aprobada");
             console.log('transacción aceptada');
+			
           }
           //Transaccion Rechazada
           if (response.data.x_cod_response == 2) {
@@ -131,10 +134,29 @@
           $('#recibo').text(response.data.x_transaction_id);
           $('#banco').text(response.data.x_bank_name);
           $('#autorizacion').text(response.data.x_approval_code);
-          $('#total').text(response.data.x_amount + ' ' + response.data.x_currency_code);
+		  $('#total').text(response.data.x_amount + ' ' + response.data.x_currency_code);
+		
+
+		var data = {
+			action: 'folder_contents', 
+			fecha: response.data.x_transaction_date,
+			ref: response.data.x_id_invoice, 
+			recibo: response.data.x_transaction_id,
+			total: response.data.x_amount,
+			status: response.data.x_response,
+			post_id: response.data.x_extra1
+		}
+
+		var ajaxurl = $("#path-ajax").val();
+
+		$.post(ajaxurl, data, function(response) {
+			console.log(response);
+		});
+
         } else {
           alert("Error consultando la información");
-        }
+		}
+		
       });
     });
   </script>

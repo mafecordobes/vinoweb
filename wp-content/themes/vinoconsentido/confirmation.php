@@ -23,9 +23,11 @@ $x_motivo       = $_REQUEST['x_response_reason_text'];
 $x_id_invoice   = $_REQUEST['x_id_invoice'];
 $x_autorizacion = $_REQUEST['x_approval_code'];
 //Validamos la firma
+
 if ($x_signature == $signature) {
     /*Si la firma esta bien podemos verificar los estado de la transacción*/
-    $x_cod_response = $_REQUEST['x_cod_response'];
+	$x_cod_response = $_REQUEST['x_cod_response'];
+	
     switch ((int) $x_cod_response) {
         case 1:
             # code transacción aceptada
