@@ -16,6 +16,26 @@
         'posts_per_page' => '-1'
     );
 	$eventos = new WP_Query( $args );
+	$args_people = array(
+		'post_type' => 'personas',
+		'post_status' => 'publish',
+		'posts_per_page' => '-1'
+	);
+	$people = get_posts( $args_people );
+	$people_evento = array();
+	foreach($people as $person){
+
+		$id_evento_people = intval(get_field("evento", $person->ID));
+		$valid = get_field("validado", $person->ID);
+		if($valid){
+			$people_evento[$id_evento_people][] = $person->ID;
+			$partner = get_field("nombre_acompanante", $person->ID);
+			if($partner != ""){
+				$people_evento[$id_evento_people][] = $person->ID;
+			}
+		}
+
+	}
 
 ?>
 
@@ -98,7 +118,7 @@
 					$lugar = get_field('lugar');
 					$qty = get_field('cantidad_de_personas');
 					$id_evento = $post->ID; 
-					
+					$people_by = $people_evento[$id_evento];
                 ?>
                     <div class="col-xs-12">
                         <div class="col-sm-7">
@@ -111,7 +131,7 @@
                                 <p><i class="fas fa-map-marker"></i></i><?php echo $lugar; ?></p>
                                 <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_person, 2, '.', ','); ?> COP por persona <a href="/registro?people=1&e=<?php echo $id_evento; ?>">Reservar</a></p>
                                 <p><i class="fas fa-dollar-sign"></i><?php echo number_format($price_pair, 2, '.', ','); ?> COP por pareja <a href="/registro?people=2&e=<?php echo $id_evento; ?>">Reservar</a></p>
-								<p><i class="fas fa-users"></i>Cupos disponibles: <?php echo $qty; ?></p>
+								<p><i class="fas fa-users"></i>Cupos disponibles: <?php echo $qty - count($people_by); ?></p>
                             </div>
                         </div>
                     </div>

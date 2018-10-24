@@ -22,6 +22,7 @@
 
 	add_action('init', 'register_custom_posts_init');
 	add_action('init', 'people_custom_posts_init');
+	add_action('init', 'general_custom_posts_init');
 
     function register_custom_posts_init() {
         // Register Products
@@ -55,6 +56,23 @@
             'supports'           => array( 'title', 'thumbnail', 'revisions' )
         );
         register_post_type('personas', $people_args);
+	}
+	
+	function general_custom_posts_init() {
+        // Register Products
+        $general_labels = array(
+            'name'               => 'Información General',
+            'singular_name'      => 'Información General',
+            'menu_name'          => 'Información General'
+        );
+        $general_args = array(
+            'labels'             => $general_labels,
+            'public'             => true,
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'supports'           => array( 'title')
+        );
+        register_post_type('general', $general_args);
     }
 
     if ( !defined('AH_DIRNAME') )

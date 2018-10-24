@@ -10,8 +10,18 @@ Es muy importante comprobar la firma enviada desde ePayco
 Ingresar  el valor de p_cust_id_cliente lo encuentras en la configuración de tu cuenta ePayco
 Ingresar  el valor de p_key lo encuentras en la configuración de tu cuenta ePayco
 */
-$p_cust_id_cliente = '24329';
-$p_key             = 'd19165bf731266e7ba1070caed7f97e966ace4f4';
+
+$args = array(
+	'post_type' => 'general',
+	'post_status' => 'publish',
+	'posts_per_page' => '-1'
+);
+$general = get_posts( $args );
+
+$key = $general[0]->ID; 
+
+$p_cust_id_cliente = get_field("id_cliente_epayco", $key);
+$p_key             = get_field("key_cliente_epayco", $key);
 $x_ref_payco      = $_REQUEST['x_ref_payco'];
 $x_transaction_id = $_REQUEST['x_transaction_id'];
 $x_amount         = $_REQUEST['x_amount'];

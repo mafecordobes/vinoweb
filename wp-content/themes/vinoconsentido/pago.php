@@ -15,6 +15,16 @@
 	$precio_i = get_field("precio_individual", $evento);
 	$precio_p = get_field("precio_por_pareja", $evento);
 	$fecha = get_field("fecha", $evento);
+	$args = array(
+        'post_type' => 'general',
+        'post_status' => 'publish',
+        'posts_per_page' => '-1'
+    );
+	$general = get_posts( $args );
+
+	$key = $general[0]->ID; 
+
+	$public_key = get_field("public_key_epayco", $key);
 
 ?>
 <script>
@@ -33,6 +43,7 @@
 			<input type="hidden" value="<?php echo $fecha; ?>" id="fecha-evento" />
 			<input type="hidden" value="<?php echo $name; ?>" id="name-evento" />
 			<input type="hidden" value="<?php echo $person; ?>" id="person" />
+			<input type="hidden" value="<?php echo $public_key; ?>" id="k" />
 			<input type="hidden" value="<?php echo ($people == "1") ? $precio_i : $precio_p; ?>" id="precio-evento" />
 		</div>
     </div>
@@ -42,7 +53,7 @@
 
 <script>
 	var handler = ePayco.checkout.configure({
-		key: 'f1b6291e49545951b752c0f7c34b6ae0',
+		key: $("#k").val(),
 		test: true
 	})
 
